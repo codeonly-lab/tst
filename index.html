@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVIS AI Hackathon</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #fff;
+      overflow-x: hidden;
+      background: #0f2027; /* fallback */
+      background: linear-gradient(120deg, #2c5364, #203a43, #0f2027);
+      background-size: 600% 600%;
+      animation: gradientBG 20s ease infinite;
+      perspective: 1000px; /* 3D effect */
+    }
+
+    /* Moving 3D background shapes */
+    .shapes span {
+      position: absolute;
+      display: block;
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20%;
+      animation: float3D 12s infinite ease-in-out;
+      backdrop-filter: blur(3px);
+      transform-style: preserve-3d;
+    }
+
+    .shapes span:nth-child(1) {
+      top: 10%; left: 15%;
+      animation-delay: 0s;
+    }
+    .shapes span:nth-child(2) {
+      top: 40%; left: 70%;
+      animation-delay: 3s;
+    }
+    .shapes span:nth-child(3) {
+      top: 75%; left: 25%;
+      animation-delay: 6s;
+    }
+    .shapes span:nth-child(4) {
+      top: 20%; left: 80%;
+      animation-delay: 9s;
+    }
+    .shapes span:nth-child(5) {
+      top: 60%; left: 10%;
+      animation-delay: 12s;
+    }
+
+    /* Header */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 70px 20px;
+      z-index: 10;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3.5rem;
+      letter-spacing: 2px;
+      animation: fadeInDown 1.5s ease-out;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 1.5rem;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .highlight {
+      color: #fdd835;
+      font-weight: bold;
+    }
+
+    /* Section */
+    section {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+      backdrop-filter: blur(12px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    section:hover {
+      transform: translateY(-8px) rotateX(5deg);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+    }
+
+    h2 {
+      color: #fdd835;
+      margin-bottom: 15px;
+      font-size: 1.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section p {
+      font-size: 1.2rem;
+    }
+
+    /* Guidelines list */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 14px 0;
+      padding: 16px;
+      background: rgba(255,255,255,0.15);
+      border-left: 6px solid #fdd835;
+      border-radius: 12px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    ul li:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateX(10px) scale(1.02);
+    }
+
+    /* Animations */
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-40px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(40px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+
+    @keyframes float3D {
+      0% { transform: translateY(0) rotateY(0deg) rotateX(0deg); }
+      50% { transform: translateY(-60px) rotateY(180deg) rotateX(20deg); }
+      100% { transform: translateY(0) rotateY(360deg) rotateX(0deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating shapes -->
+  <div class="shapes">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <header>
+    <h1>SVIS AI Hackathon</h1>
+    <p><span class="highlight">For Class 8</span></p>
+  </header>
+
+  <section class="theme">
+    <h2>🏙️ Theme: Smart City Builder</h2>
+    <p>Use <b>AI + APIs</b> to imagine and design the future of smarter, greener cities 🌱.</p>
+  </section>
+
+  <section class="help">
+    <h2>🛠️ Help & Guidelines</h2>
+    <ul>
+      <li>✨ <b>Start Simple</b> → Use no-code tools</li>
+      <li>🌍 <b>Focus on Impact</b> → Answer: "Who does this help, and how?"</li>
+      <li>🎯 <b>Embrace Constraints</b> → Solve ONE small problem really well</li>
+      <li>⚖️ <b>Prioritize Ethics</b> → Discuss: "Could this ever be misused?"</li>
+    </ul>
+  </section>
+</body>
+</html>
